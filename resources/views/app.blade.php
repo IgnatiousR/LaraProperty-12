@@ -5,13 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @vite('resources/js/app.js')
         @inertiaHead
-        <title>Laravel</title>
+        <title>Larazillow</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
     </head>
-    <body>
+    <body class="bg-white dark:bg-gray-900 dark:text-gray-300 font-Bai">
+        {{-- <img src="/storage/imgs/a1.jpg" alt="Girl in a jacket" width="50" height="60"> --}}
         @inertia
     </body>
 </html>
