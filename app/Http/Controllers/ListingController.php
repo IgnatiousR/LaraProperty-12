@@ -19,7 +19,7 @@ class ListingController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new resource.Hello
      */
     public function create()
     {
@@ -36,7 +36,7 @@ class ListingController extends Controller
             'baths' => 'required|integer|min:1|max:20',
             'area' => 'required|integer|min:15|max:10000',
             'city' => 'required|string',
-            'postal_code' => 'required|integer|min:1',
+            'postal_code' => 'required|integer',
             'address' => 'required|string',
             'price' => 'required|integer|min:1',
         ]);
@@ -62,7 +62,7 @@ class ListingController extends Controller
      */
     public function edit(Listing $listing)
     {
-        return inertia('Listing/Edt',
+        return inertia('Listing/Edit',
         [
             'listing' => $listing
         ]);

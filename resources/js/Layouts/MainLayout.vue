@@ -11,8 +11,8 @@
         <div class="container mx-auto">
             <nav class="p-4 flex items-center justify-between">
                 <Link href="/listing" class="text-lg font-medium hover:underline">Listings</Link>
-                <h1 class="text-lg font-bold dark:text-orange-300 text-orange-600 ">Larazillow</h1>
-                <Link href="/listing/create" class="text-white px-4 py-2 rounded bg-orange-600 hover:bg-orange-700 ">Create Listing</Link>
+                <h1 class="text-lg font-bold dark:text-emerald-300 text-emerald-600 ">LaraProperty</h1>
+                <Link href="/listing/create" class="font-light text-white p-2 md:px-4 md:py-2 rounded bg-emerald-500 hover:bg-emerald-400 ">Create Listing</Link>
             </nav>
         </div>
     </header>

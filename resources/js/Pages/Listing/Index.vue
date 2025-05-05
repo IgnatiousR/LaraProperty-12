@@ -4,6 +4,7 @@ import ListingSpace from '@/Components/ListingSpace.vue';
 import Price from '@/Components/Price.vue';
 import Box from '@/Components/UI/Box.vue';
 import { Link } from '@inertiajs/vue3'
+
 defineProps({
     listings: Array,
     })
@@ -24,12 +25,12 @@ defineProps({
                 </Link>
             </div>
 
-            <div>
+            <!-- <div>
                 <Link :href="`/listing/${ listing.id }/edit`">Edit</Link>
             </div>
             <div>
                 <Link :href="`/listing/${listing.id}/`" method="delete">Delete</Link>
-            </div>
+            </div> -->
 
         </Box>
     </div>

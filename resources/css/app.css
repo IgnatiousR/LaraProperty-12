@@ -14,3 +14,28 @@
     /* --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji'; */
 }
+@layer utilities {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer components{
+  .label {
+    @apply block mb-1 text-gray-500 dark:text-gray-300 font-medium;
+  }
+
+  .input{
+    @apply block w-full border rounded-md shadow-sm text-gray-500 focus:outline-none border-gray-300 dark:border-gray-500 p-2;
+  }
+
+  .input-error {
+    @apply text-sm text-red-500 dark:text-red-400;
+  }
+}
