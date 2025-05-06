@@ -38,4 +38,8 @@
   .input-error {
     @apply text-sm text-red-500 dark:text-red-400;
   }
+
+  .button{
+    @apply text-white p-2 md:px-4 md:py-2 rounded bg-emerald-500 hover:bg-emerald-400
+  }
 }

@@ -64,7 +64,7 @@ const create = () => form.post('/listing')
             </div>
 
             <div class="col-span-6">
-                <button type="submit" class="text-white p-2 md:px-4 md:py-2 rounded bg-emerald-500 hover:bg-emerald-400 ">Create</button>
+                <button type="submit" class="button">Create</button>
             </div>
         </div>
     </form>

@@ -6,9 +6,11 @@ import Box from '@/Components/UI/Box.vue';
 import { Link } from '@inertiajs/vue3';
 import {useMonthlyPayment} from '@/Composables/useMonthlyPayment';
 
-defineProps({
+const prop = defineProps({
     listing:Object,
 })
+
+const {monthlyPayment} = useMonthlyPayment(prop.listing.price, 2.5, 25)
 </script>
 
 <template>
@@ -21,7 +23,7 @@ defineProps({
                     <div class="flex items-center gap-2">
                         <Price :price="listing.price" class="text-2xl font-bold"/>
                         <div class="text-xs text-gray-500">
-                            <Price :price="400"/>pm
+                            <Price :price="monthlyPayment"/>pm
                         </div>
                     </div>
                     <!-- {{ listing.id }}. {{ listing.city }} -->
