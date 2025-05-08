@@ -16,12 +16,16 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         //Truncate all the table data first
+        DB::table('users')->truncate();
         DB::table('listings')->truncate();
         // User::factory(10)->create();
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::factory()->create([
+            'first_name' => 'Test',
+            'last_name' => 'Test',
+            'phone_number' => '12345678',
+            'email' => 'test@example.com',
+            'password' => '1234',
+        ]);
         Listing::factory(20)->create();
     }
 }
