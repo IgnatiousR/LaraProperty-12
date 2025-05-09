@@ -40,6 +40,6 @@
   }
 
   .button{
-    @apply text-white p-2 md:px-4 md:py-2 rounded bg-emerald-500 hover:bg-emerald-400
+    @apply text-white p-2 md:px-4 md:py-2 rounded bg-emerald-500 hover:bg-emerald-400 cursor-pointer
   }
 }

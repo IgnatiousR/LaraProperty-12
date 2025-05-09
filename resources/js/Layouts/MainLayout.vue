@@ -22,7 +22,7 @@
                     <Link href="/listing/create" class="font-light text-white p-2 md:px-4 md:py-2 rounded bg-emerald-500 hover:bg-emerald-400 ">Create Listing</Link>
                     <Link href="/logout" method="POST" as="button" class="font-light text-white p-2 md:px-4 md:py-2 rounded border border-emerald-500  hover:bg-emerald-400/20 ">Logout</Link>
                 </div>
-                <div v-else class="flex items-center gap-4">
+                <div v-else class="flex items-center gap-2">
                     <Link href="/login" class="font-light text-white p-2 md:px-4 md:py-2 rounded border border-emerald-500  hover:bg-emerald-400/20 ">Login</Link>
                     <Link href="/register" class="font-light text-white p-2 md:px-4 md:py-2 rounded bg-emerald-500 hover:bg-emerald-400 ">Register</Link>
                 </div>

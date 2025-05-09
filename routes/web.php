@@ -10,7 +10,17 @@ use Illuminate\Support\Facades\Route;
 //     return inertia('Index/Index');
 // });
 
-Route::get('/', [IndexController::class, 'index']);
+// Route::get('/', function () {
+//     return inertia('Listing/Index',
+//     [
+//         'listings' => Listing::all()
+//     ]);
+// });
+
+Route::get('/', function () {
+    return redirect()->intended('/listing');
+});
+
 Route::get('/hello', [IndexController::class, 'show'])->middleware('auth');
 Route::resource('listing', ListingController::class)
 ->only(['create', 'store', 'update', 'destroy'])
@@ -22,9 +32,9 @@ Route::resource('listing', ListingController::class)
 
 Route::middleware('guest')->group(function(){
     Route::get('/login', [LoginController::class,'login'])->name('login');
-    Route::post('/login', [LoginController::class,'authenicate']);
+    Route::post('/login', [LoginController::class,'authenicate'])->name('login.authenicate');
+    Route::get('/register', [RegisterController::class,'register'])->name('register');
+    Route::post('/register', [RegisterController::class,'store'])->name('register.store');
 });
 
 Route::post('/logout', [LoginController::class,'logout'])->name('logout');
-Route::get('/register', [RegisterController::class,'register']);
-Route::post('/register', [RegisterController::class,'store']);

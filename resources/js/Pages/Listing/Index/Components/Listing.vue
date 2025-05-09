@@ -15,9 +15,9 @@ const {monthlyPayment} = useMonthlyPayment(prop.listing.price, 2.5, 25)
 
 <template>
     <Box>
-            <!-- <div>
-                <img src="/storage/imgs/a1.jpg" class="container">
-            </div> -->
+            <div>
+                <img src="/storage/imgs/no_img.png" class="container">
+            </div>
             <div>
                 <Link :href="`/listing/${listing.id}`">
                     <div class="flex items-center gap-2">
