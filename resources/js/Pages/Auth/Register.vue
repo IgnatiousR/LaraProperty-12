@@ -34,6 +34,12 @@ const register = () => form.post('/register')
                 <div class="input-error" v-if="form.errors.email">{{ form.errors.email }}</div>
             </div>
 
+            <div>
+                <label for="phone_number" class="label">Phone Number (Optional)</label>
+                <input id="phone_number" type="text" class="input" v-model="form.phone_number" placeholder="Phone Number"/>
+                <div class="input-error" v-if="form.errors.phone_number">{{ form.errors.phone_number }}</div>
+            </div>
+
             <div class="mt-4">
                 <label for="password" class="label">Password</label>
                 <input id="password" type="password" class="input" v-model="form.password" placeholder="Password"/>

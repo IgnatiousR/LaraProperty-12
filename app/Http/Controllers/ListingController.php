@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Listing;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ListingController extends Controller
 {
+    public function __construct(){
+        //Gate::authorize(Listing::class, 'listing');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -31,16 +35,17 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'beds' => 'required|integer|min:1|max:20',
-            'baths' => 'required|integer|min:1|max:20',
-            'area' => 'required|integer|min:15|max:10000',
-            'city' => 'required|string',
-            'postal_code' => 'required|integer',
-            'address' => 'required|string',
-            'price' => 'required|integer|min:1',
-        ]);
-        Listing::create($validatedData);
+        $request->user()->listings()->create(
+            $request->validate([
+                'beds' => 'required|integer|min:1|max:20',
+                'baths' => 'required|integer|min:1|max:20',
+                'area' => 'required|integer|min:15|max:10000',
+                'city' => 'required|string',
+                'postal_code' => 'required|integer',
+                'address' => 'required|string',
+                'price' => 'required|integer|min:1',
+            ]));
+        // Listing::create($validatedData);
 
         return redirect()->route('listing.index')
         ->with('success', 'Listing was created successfully.');

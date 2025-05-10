@@ -18,14 +18,22 @@ class DatabaseSeeder extends Seeder
         //Truncate all the table data first
         DB::table('users')->truncate();
         DB::table('listings')->truncate();
+
         // User::factory(10)->create();
         User::factory()->create([
             'first_name' => 'Test',
-            'last_name' => 'Test',
+            'last_name' => 'User',
             'phone_number' => '12345678',
-            'email' => 'test@example.com',
+            'email' => 'test@gmail.com',
             'password' => '1234',
         ]);
-        Listing::factory(20)->create();
+
+        User::factory()->create([
+            'first_name' => 'Test2',
+            'last_name' => 'User',
+            'email' => 'test@example.com',
+            'password' => '12345678',
+        ]);
+        Listing::factory(20)->create(['by_user_id'=>1]);
     }
 }
